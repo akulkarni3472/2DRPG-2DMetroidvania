@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch7me5p05l80b"
+path="res://.godot/imported/Logo music.mp3-f18a5d24244e6ba6f8ebfb38290e400d.mp3str"
+
+[deps]
+
+source_file="res://metroidvania assets/Audio/Logo music.mp3"
+dest_files=["res://.godot/imported/Logo music.mp3-f18a5d24244e6ba6f8ebfb38290e400d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
