@@ -1,5 +1,74 @@
-[gd_scene format=3 uid="uid://byqeqia7n4bs7"]
+[gd_scene load_steps=8 format=3 uid="uid://byqeqia7n4bs7"]
+
+[ext_resource type="Texture2D" uid="uid://c2iso6a5d618k" path="res://metroidvania assets/Player2.png" id="1_47u23"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ar15"]
+radius = 8.30419
+height = 32.6245
+
+[sub_resource type="Animation" id="Animation_ud8go"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ql1fs"]
+resource_name = "walk"
+
+[sub_resource type="Animation" id="Animation_lwjkd"]
+resource_name = "sword_attack"
+
+[sub_resource type="Animation" id="Animation_ce4c4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vm8at"]
+_data = {
+"RESET": SubResource("Animation_ce4c4"),
+"idle": SubResource("Animation_ud8go"),
+"sword_attack": SubResource("Animation_lwjkd"),
+"walk": SubResource("Animation_ql1fs")
+}
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Player2" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+texture = ExtResource("1_47u23")
+hframes = 5
+vframes = 5
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -3)
+scale = Vector2(1.08379, 1.04216)
+shape = SubResource("CapsuleShape2D_4ar15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_vm8at")
+}
