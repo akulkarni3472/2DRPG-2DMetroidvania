@@ -58,7 +58,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ql1fs"]
 resource_name = "walk"
-length = 0.458338
+length = 0.416671
 loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
@@ -95,6 +95,7 @@ hframes = 5
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(0, -2)
 scale = Vector2(1.08379, 1.04216)
 shape = SubResource("CapsuleShape2D_4ar15")
