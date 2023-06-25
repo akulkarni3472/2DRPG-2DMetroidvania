@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c2iso6a5d618k" path="res://metroidvania assets/Player2.png" id="1_47u23"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ar15"]
-radius = 8.30419
+radius = 9.22688
 height = 30.7055
 
 [sub_resource type="Animation" id="Animation_ce4c4"]
@@ -95,7 +95,6 @@ hframes = 5
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
 position = Vector2(0, -2)
 scale = Vector2(1.08379, 1.04216)
 shape = SubResource("CapsuleShape2D_4ar15")
